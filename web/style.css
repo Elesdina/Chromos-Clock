@@ -24,25 +24,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    font-size: 3rem;
     color: var(--main-color);
 }
 
+
+.main-content {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#greeting {
+    text-align: center;
+}
 
 .time {
     font-size: 10rem;
     font-weight: 700;
     display: inline-block;
+    text-align: center;
     padding: 0;
     margin: 0;
 }
 
-.time span {
-    display: inline-block;
-}
-
-#fullscreen-btn {
+.options-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -52,7 +58,7 @@ body {
     color: var(--main-color);
 }
 
-#fullscreen-btn:hover {
+.options-btn:hover {
     transform: scale(1.1);
 }
 
@@ -60,6 +66,34 @@ body {
     font-size: inherit;
 }
 
-#fullscreen-btn .material-symbols-outlined {
+.options-btn .material-symbols-outlined {
     font-size: 3rem !important; /* Ensure the font size is inherited */
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sidebar {
+    visibility: hidden;
+    background-color:rgb(52, 49, 37);
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    box-sizing: border-box;
+    margin: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.active {
+    visibility: visible;
 }
