@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color: #aae8ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.morning-theme { color: #aae8ff; }
+.afternoon-theme { color: #ffebaa; }
+.night-theme { color: #ffbbaa; }
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #1b1b1b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+
+.time {
+    font-size: 10rem;
+    font-weight: 700;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.time span {
+    display: inline-block;
+}
+
+#fullscreen-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    transition: 100ms ease-out;
+    color: var(--main-color);
+}
+
+#fullscreen-btn:hover {
+    transform: scale(1.1);
+}
+
+.material-symbols-outlined {
+    font-size: inherit;
+}
+
+#fullscreen-btn .material-symbols-outlined {
+    font-size: 3rem !important; /* Ensure the font size is inherited */
+}
