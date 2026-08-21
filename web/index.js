@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         hours.innerHTML = hoursTime === 0 ? 12 : hoursTime > 12 ? hoursTime - 12 : hoursTime;
         minutes.innerHTML = (minutesTime < 10 ? "0" : "") + minutesTime;
 
+        document.title = `${hours.innerHTML}:${minutes.innerHTML} | Chromos Clock`;
+
         wasHoursChanged();
     }
 
