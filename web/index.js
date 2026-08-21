@@ -71,15 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("fullscreen-btn").addEventListener("click", () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
+      document.getElementById("fullscreen-btn").querySelector("span").textContent = "fullscreen_exit";
     } else {
       if (document.exitFullscreen) {
         document.exitFullscreen();
+        document.getElementById("fullscreen-btn").querySelector("span").textContent = "fullscreen";
       }
     }
   });
 
   document.getElementById("settings-btn").addEventListener("click", () => {
     let sidebar = document.querySelector(".sidebar");
+    if (sidebar.classList.contains("active")) {
+        document.getElementById("settings-btn").querySelector("span").textContent = "density_medium";
+    } else {
+        document.getElementById("settings-btn").querySelector("span").textContent = "close";
+    }
     sidebar.classList.toggle("active");
   });
 });
