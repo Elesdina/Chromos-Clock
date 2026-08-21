@@ -2,6 +2,7 @@
 
 :root {
     --main-color: #aae8ff;
+    --background-color: #1b1b1b;
 }
 
 * {
@@ -18,7 +19,7 @@ body {
     width: 100%;
     overflow: hidden;
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #1b1b1b;
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -79,7 +80,7 @@ body {
 
 .sidebar {
     visibility: hidden;
-    background-color:rgb(52, 49, 37);
+    background-color: color-mix(var(--main-color) 10%, var(--background-color));
     z-index: 1000;
     position: absolute;
     top: 0;

@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateDisplay() {
     if (hoursTime < 12) {
       document.documentElement.style.setProperty("--main-color", "#aae8ff");
-      greeting.innerHTML = greeting1;
-    } else if (hoursTime >= 12 && hoursTime < 20) {
+      greeting.innerHTML = greeting1.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    } else if (hoursTime >= 12 && hoursTime < 17) {
       document.documentElement.style.setProperty("--main-color", "#ffebaa");
-      greeting.innerHTML = greeting2;
+      greeting.innerHTML = greeting2.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     } else {
       document.documentElement.style.setProperty("--main-color", "#ffbbaa");
-      greeting.innerHTML = greeting3;
+      greeting.innerHTML = greeting3.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
   }
 
