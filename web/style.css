@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --main-color: #aae8ff;
-    --background-color: #1b1b1b;
+    --main-color: rgb(170, 232, 255);
+    --background-color: rgb(27, 27, 27);
 }
 
 * {
@@ -10,9 +10,9 @@
     padding: 0;
 }
 
-.morning-theme { color: #aae8ff; }
-.afternoon-theme { color: #ffebaa; }
-.night-theme { color: #ffbbaa; }
+.morning-theme { color: rgb(170, 232, 255); }
+.afternoon-theme { color: rgb(255, 235, 170); }
+.night-theme { color: rgb(255, 187, 170); }
 
 body {
     height: 100vh;
@@ -26,6 +26,18 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--main-color);
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: grid-template-columns 300ms ease;
+}
+
+.wrapper > div {
+    text-align: center;
 }
 
 
@@ -68,7 +80,7 @@ body {
 }
 
 .options-btn .material-symbols-outlined {
-    font-size: 3rem !important; /* Ensure the font size is inherited */
+    font-size: 3rem !important;
 }
 
 .options {
@@ -81,20 +93,66 @@ body {
 .sidebar {
     visibility: hidden;
     background-color: color-mix(var(--main-color) 10%, var(--background-color));
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 300px;
+    min-width: 0;
     box-sizing: border-box;
     margin: 12px;
-    padding: 2rem;
-    display: flex;
+    padding: 1.5rem 2rem;
+    display: none;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
 }
 
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar label {
+    align-self: flex-start;
+    margin-left: -5px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+}
+
+.sidebar a span {
+    color: rgb(252, 106, 106);
+}
+
+.input {
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: rgb(167, 167, 167);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.input:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transition: 0.2s;
+}
+
+.input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(209, 209, 209);
+    outline: none;
+}
+
 .active {
     visibility: visible;
+}
+
+.block {
+    display: block;
+}
+
+.align {
+    grid-template-columns: 3fr 1fr;
 }

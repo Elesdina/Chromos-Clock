@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize time variables
     let hoursTime;
     let minutesTime;
-    let secondsTime;
+    let secondsTime; //currently unused
     let hoursTimeTemp = hoursTime;
 
     // Greeting messages
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.title = `${hours.innerHTML}:${minutes.innerHTML} | Chromos Clock`;
 
-        wasHoursChanged();
+        checkHoursChanged();
     }
 
-    function wasHoursChanged() {
+    function checkHoursChanged() {
         if (hoursTime !== hoursTimeTemp) {
-        updateDisplay();
-        hoursTimeTemp = hoursTime;
+            updateDisplay();
+            hoursTimeTemp = hoursTime;
         }
         return;
     }
@@ -44,15 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hoursTime < 12) {
             document.documentElement.style.setProperty("--main-color", "#aae8ff");
             greeting.innerHTML = greeting1.replace(/</g, "&lt;").replace(/>/g, "&gt;") || defaultMessage;
-        } else if (hoursTime >= 12 && hoursTime < 17) {
+        } 
+        else if (hoursTime >= 12 && hoursTime < 17) {
             document.documentElement.style.setProperty("--main-color", "#ffebaa");
             greeting.innerHTML = greeting2.replace(/</g, "&lt;").replace(/>/g, "&gt;") || defaultMessage;
-        } else {
+        } 
+        else {
             document.documentElement.style.setProperty("--main-color", "#ffbbaa");
             greeting.innerHTML = greeting3.replace(/</g, "&lt;").replace(/>/g, "&gt;") || defaultMessage;
         }
     }
 
+    
+    // Update greetings when edited
     document.getElementById("greeting1").onkeyup = function() {
         greeting1 = this.value;
         updateDisplay();
@@ -70,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTime();
     setInterval(updateTime, 1000);
 
-    // Extra stuff
+    // Button functionality
     document.getElementById("fullscreen-btn").addEventListener("click", () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -85,11 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("settings-btn").addEventListener("click", () => {
         let sidebar = document.querySelector(".sidebar");
+        let wrapper = document.querySelector(".wrapper");
         if (sidebar.classList.contains("active")) {
             document.getElementById("settings-btn").querySelector("span").textContent = "density_medium";
         } else {
             document.getElementById("settings-btn").querySelector("span").textContent = "close";
         }
         sidebar.classList.toggle("active");
+        wrapper.classList.toggle("align")
+        sidebar.classList.toggle("block");
     });
 });
